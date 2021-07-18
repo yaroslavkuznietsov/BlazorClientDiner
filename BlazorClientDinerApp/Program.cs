@@ -17,12 +17,13 @@ namespace BlazorClientDinerApp
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
-            builder.Services.AddScoped(sp => new HttpClient 
+            builder.Services.AddScoped(sp => new HttpClient
             {
                 //BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
-                BaseAddress = new Uri("https://api.whichaspnetcore.com")
+                //BaseAddress = new Uri("https://api.whichaspnetcore.com")
+                BaseAddress = new Uri("https://localhost:44384/")
 
-            });
+            }); ;
 
             await builder.Build().RunAsync();
         }
